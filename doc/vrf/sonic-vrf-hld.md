@@ -80,6 +80,7 @@ Table of Contents
 | Quagga   | Open IP routing protocol suite                                                                                                                  |
 | RIB      | Routing Information Base                                                                                                                        |
 | PBR      | Policy based routing         |
+| MPLS     | Multi Protocol Label Switching    |
 
 ## VRF feature Requirement
 
@@ -155,6 +156,9 @@ Prefix lists within route maps are used to match route prefixes in source VRF an
 If route map action is permit, these routes will be installed into destination VRF.
 
 Leaked routes will be automatically deleted when corresponding routes are deleted in source VRF.
+
+#### VRF-lite Support:
+The VRF in the provider network make use of MPLS for forwarding the packets towards destination based on labels. MPLS is usually not configured in the customer network. VRF-Lite, a version of VRF without MPLS is used in the customer network. We have provided a set of cli commands for the VRF-Lite as well. 
 
 ## Dependencies
 
